@@ -3230,8 +3230,9 @@ func (b *VerifyRegistrationResponse) SetStatus(status int) {
 type Webhook struct {
   ApplicationIds            []string                  `json:"applicationIds,omitempty"`
   ConnectTimeout            int                       `json:"connectTimeout,omitempty"`
-  Data                      WebhookData               `json:"data,omitempty"`
+  Data                      map[string]interface{}    `json:"data,omitempty"`
   Description               string                    `json:"description,omitempty"`
+  EventsEnabled             map[EventType]bool        `json:"eventsEnabled,omitempty"`
   Global                    bool                      `json:"global,omitempty"`
   Headers                   map[string]string         `json:"headers,omitempty"`
   HttpAuthenticationPassword string                    `json:"httpAuthenticationPassword,omitempty"`
@@ -3240,10 +3241,6 @@ type Webhook struct {
   ReadTimeout               int                       `json:"readTimeout,omitempty"`
   SslCertificate            string                    `json:"sslCertificate,omitempty"`
   Url                       string                    `json:"url,omitempty"`
-}
-
-type WebhookData struct {
-  EventsEnabled             map[EventType]bool        `json:"eventsEnabled,omitempty"`
 }
 
 /**
