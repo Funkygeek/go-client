@@ -340,10 +340,11 @@ const (
   BreachAction_RequireChange        BreachAction         = "RequireChange"
 )
 
-type BreachMatchType string
+type BreachMatchMode string
 const (
-  BreachMatchType_EmailSubAddressing   BreachMatchType      = "EmailSubAddressing"
-  BreachMatchType_PasswordOnly         BreachMatchType      = "PasswordOnly"
+  BreachMatchMode_Low                  BreachMatchMode      = "Low"
+  BreachMatchMode_Medium               BreachMatchMode      = "Medium"
+  BreachMatchMode_High                 BreachMatchMode      = "High"
 )
 
 /**
@@ -1966,7 +1967,7 @@ type OpenIdConnectIdentityProvider struct {
  */
 type PasswordBreachDetection struct {
   Enableable
-  AdditionalMatches         []BreachMatchType         `json:"additionalMatches,omitempty"`
+  MatchMode                 BreachMatchMode           `json:"matchMode,omitempty"`
   NotifyUserEmailTemplateId string                    `json:"notifyUserEmailTemplateId,omitempty"`
   OnLogin                   BreachAction              `json:"onLogin,omitempty"`
 }
