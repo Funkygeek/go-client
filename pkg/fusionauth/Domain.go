@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2019-2020, FusionAuth, All Rights Reserved
+* Copyright (c) 2019, FusionAuth, All Rights Reserved
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -376,11 +376,14 @@ type CertificateInformation struct {
   ValidTo                   int64                     `json:"validTo,omitempty"`
 }
 
+/**
+ * @author Trevor Smith
+ */
 type ChangePasswordReason string
 const (
-  ChangePasswordReason_Expired              ChangePasswordReason = "Expired"
   ChangePasswordReason_Administrative       ChangePasswordReason = "Administrative"
   ChangePasswordReason_Breached             ChangePasswordReason = "Breached"
+  ChangePasswordReason_Expired              ChangePasswordReason = "Expired"
   ChangePasswordReason_Validation           ChangePasswordReason = "Validation"
 )
 
