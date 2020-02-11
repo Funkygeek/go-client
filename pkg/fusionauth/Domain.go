@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2019, FusionAuth, All Rights Reserved
+* Copyright (c) 2019-2020, FusionAuth, All Rights Reserved
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -375,6 +375,14 @@ type CertificateInformation struct {
   ValidFrom                 int64                     `json:"validFrom,omitempty"`
   ValidTo                   int64                     `json:"validTo,omitempty"`
 }
+
+type ChangePasswordReason string
+const (
+  ChangePasswordReason_Expired              ChangePasswordReason = "Expired"
+  ChangePasswordReason_Administrative       ChangePasswordReason = "Administrative"
+  ChangePasswordReason_Breached             ChangePasswordReason = "Breached"
+  ChangePasswordReason_Validation           ChangePasswordReason = "Validation"
+)
 
 /**
  * Change password request object.
@@ -1688,6 +1696,7 @@ type LoginResponse struct {
   BaseHTTPResponse
   Actions                   []LoginPreventedResponse  `json:"actions,omitempty"`
   ChangePasswordId          string                    `json:"changePasswordId,omitempty"`
+  ChangePasswordReason      ChangePasswordReason      `json:"changePasswordReason,omitempty"`
   RefreshToken              string                    `json:"refreshToken,omitempty"`
   State                     map[string]interface{}    `json:"state,omitempty"`
   Token                     string                    `json:"token,omitempty"`
@@ -2352,6 +2361,7 @@ type SecureIdentity struct {
   Factor                    int                       `json:"factor,omitempty"`
   Id                        string                    `json:"id,omitempty"`
   Password                  string                    `json:"password,omitempty"`
+  PasswordChangeReason      ChangePasswordReason      `json:"passwordChangeReason,omitempty"`
   PasswordChangeRequired    bool                      `json:"passwordChangeRequired,omitempty"`
   PasswordLastUpdateInstant int64                     `json:"passwordLastUpdateInstant,omitempty"`
   Salt                      string                    `json:"salt,omitempty"`
