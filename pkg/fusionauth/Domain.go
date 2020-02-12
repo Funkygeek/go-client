@@ -1893,6 +1893,10 @@ const (
   OAuthErrorReason_InvalidClientAuthenticationScheme OAuthErrorReason     = "invalid_client_authentication_scheme"
   OAuthErrorReason_InvalidClientAuthentication OAuthErrorReason     = "invalid_client_authentication"
   OAuthErrorReason_ClientIdMismatch     OAuthErrorReason     = "client_id_mismatch"
+  OAuthErrorReason_ChangePasswordAdministrative OAuthErrorReason     = "change_password_administrative"
+  OAuthErrorReason_ChangePasswordBreached OAuthErrorReason     = "change_password_breached"
+  OAuthErrorReason_ChangePasswordExpired OAuthErrorReason     = "change_password_expired"
+  OAuthErrorReason_ChangePasswordValidation OAuthErrorReason     = "change_password_validation"
   OAuthErrorReason_Unknown              OAuthErrorReason     = "unknown"
 )
 
