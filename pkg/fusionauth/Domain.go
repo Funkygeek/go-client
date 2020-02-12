@@ -352,9 +352,9 @@ const (
  */
 type BreachStatus string
 const (
-  BreachStatus_EXACTMATCH           BreachStatus         = "EXACT_MATCH"
-  BreachStatus_PASSWORD             BreachStatus         = "PASSWORD"
-  BreachStatus_SUBADDRESSMATCH      BreachStatus         = "SUB_ADDRESS_MATCH"
+  BreachStatus_ExactMatch           BreachStatus         = "ExactMatch"
+  BreachStatus_PasswordOnly         BreachStatus         = "PasswordOnly"
+  BreachStatus_SubAddressMatch      BreachStatus         = "SubAddressMatch"
 )
 
 type CanonicalizationMethod string
