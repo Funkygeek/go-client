@@ -340,21 +340,23 @@ const (
   BreachAction_RequireChange        BreachAction         = "RequireChange"
 )
 
+/**
+ * @author Daniel DeGroff
+ */
+type BreachedPasswordStatus string
+const (
+  BreachedPasswordStatus_None                 BreachedPasswordStatus = "None"
+  BreachedPasswordStatus_ExactMatch           BreachedPasswordStatus = "ExactMatch"
+  BreachedPasswordStatus_SubAddressMatch      BreachedPasswordStatus = "SubAddressMatch"
+  BreachedPasswordStatus_PasswordOnly         BreachedPasswordStatus = "PasswordOnly"
+  BreachedPasswordStatus_CommonPassword       BreachedPasswordStatus = "CommonPassword"
+)
+
 type BreachMatchMode string
 const (
   BreachMatchMode_Low                  BreachMatchMode      = "Low"
   BreachMatchMode_Medium               BreachMatchMode      = "Medium"
   BreachMatchMode_High                 BreachMatchMode      = "High"
-)
-
-/**
- * @author Daniel DeGroff
- */
-type BreachStatus string
-const (
-  BreachStatus_ExactMatch           BreachStatus         = "ExactMatch"
-  BreachStatus_PasswordOnly         BreachStatus         = "PasswordOnly"
-  BreachStatus_SubAddressMatch      BreachStatus         = "SubAddressMatch"
 )
 
 type CanonicalizationMethod string
@@ -2365,7 +2367,7 @@ const (
  */
 type SecureIdentity struct {
   BreachedPasswordLastCheckedInstant int64                     `json:"breachedPasswordLastCheckedInstant,omitempty"`
-  BreachedPasswordStatus    BreachStatus              `json:"breachedPasswordStatus,omitempty"`
+  BreachedPasswordStatus    BreachedPasswordStatus    `json:"breachedPasswordStatus,omitempty"`
   EncryptionScheme          string                    `json:"encryptionScheme,omitempty"`
   Factor                    int                       `json:"factor,omitempty"`
   Id                        string                    `json:"id,omitempty"`
