@@ -2364,8 +2364,8 @@ const (
  * @author Daniel DeGroff
  */
 type SecureIdentity struct {
-  BreachLastChecked         int64                     `json:"breachLastChecked,omitempty"`
-  BreachStatus              BreachStatus              `json:"breachStatus,omitempty"`
+  BreachedPasswordLastCheckedInstant int64                     `json:"breachedPasswordLastCheckedInstant,omitempty"`
+  BreachedPasswordStatus    BreachStatus              `json:"breachedPasswordStatus,omitempty"`
   EncryptionScheme          string                    `json:"encryptionScheme,omitempty"`
   Factor                    int                       `json:"factor,omitempty"`
   Id                        string                    `json:"id,omitempty"`
