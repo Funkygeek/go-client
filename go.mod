@@ -1,4 +1,4 @@
-module github.com/FusionAuth/go-client
+module github.com/funkygeek/go-client
 
 go 1.14
 
